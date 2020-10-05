@@ -14,12 +14,44 @@
     />
   </head>
   <body>
-    <main>
-      <img id="logo" src="./Assets/img/logo2.jpg" alt="logo" />
+    <main id="desktop">
+      <div>
+        <div class="desktop-icons" id="readme">
+          <a
+            href="https://calendariochevere.ml/"
+            onclick="centeredPopup(this.href,'myWindow','700','500','yes');return false"
+            ><img src="./Assets/img/Notepad document.ico" />
+            <p>Readme.txt</p></a
+          >
+        </div>
+        <div class="desktop-icons">
+          <img src="./Assets/img/Folder.ico" />
+          <p>Documents</p>
+        </div>
+        <div class="desktop-icons">
+          <img src="./Assets/img/Joy pressed.ico" />
+          <p>Games</p>
+        </div>
+        <div class="desktop-icons">
+          <img src="./Assets/img/Empty Recycle Bin.ico" />
+          <p>Recycle Bin</p>
+        </div>
+        <div class="desktop-icons">
+          <img src="./Assets/img/Search on Earth.ico" width="35px" />
+          <p>The Internet</p>
+        </div>
+        <div class="desktop-icons">
+          <img src="./Assets/img/Briefcase.ico" />
+          <p>My Briefcase</p>
+        </div>
+      </div>
+      <div><img id="logo" src="./Assets/img/logo2.jpg" alt="logo" /></div>
 
       <footer id="footer">
-        <div id="dropdown-content">
-          <div id="a"><img src="./Assets/img/Captura.PNG" /></div>
+        <div id="dropdown-content" style="display: none">
+          <div id="a">
+            <img src="./Assets/img/Captura.PNG" />
+          </div>
           <div id="b">
             <a href="">
               <img
@@ -86,11 +118,12 @@
             >
           </div>
         </div>
-        <button id="start">
+        <button id="start" onclick="myFunction()">
           <img id="icono" src="./Assets/img/icon.png" width="20px" />
           <p id="inicio">Start</p>
         </button>
       </footer>
     </main>
+    <script src="./Assets/js/app.js"></script>
   </body>
 </html>

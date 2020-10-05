@@ -26,17 +26,33 @@ body {
 }
 main {
   /* border: 2px solid black; */
+
   max-width: 1000px;
   height: 100vh;
   margin: auto;
   background-color: #008080;
 }
 
+#desktop {
+  display: flex;
+  flex-direction: column;
+}
+
+.desktop-icons {
+  padding: 7px;
+  color: white;
+}
 #logo {
   position: absolute;
   width: 300px;
   top: 25vh;
   left: 800px;
+}
+
+@media screen and (max-width: 999px) {
+  #logo {
+    display: none;
+  }
 }
 
 #footer {
@@ -60,6 +76,11 @@ main {
   height: 25px;
   padding: 0 5px;
   width: 68px;
+  border: none;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 #start:active {
@@ -84,9 +105,9 @@ main {
 #footer #start #inicio {
   display: inline;
   position: absolute;
-  bottom: 3px;
-  font-family: "mia";
-  font-size: 9px;
+  bottom: 4px;
+  font-family: sans-serif;
+  font-size: 13px;
   text-shadow: 0.5px 0px black, 1.5px 0px black;
   color: transparent;
   letter-spacing: 1px;
@@ -101,8 +122,8 @@ main {
 
 #dropdown-content {
   display: grid;
-  grid-template-rows: repeat(8, 1fr);
-  grid-template-columns: 10;
+  /* grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: 10; */
   position: absolute;
   left: 2px;
   bottom: 5vh;
@@ -114,63 +135,84 @@ main {
   border-left: 2px solid white;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+
+  grid-template-areas:
+    "a b b b b b b"
+    "a c c c c c c"
+    "a d d d d d d"
+    "a e e e e e e"
+    "a f f f f f f"
+    "a g g g g g g"
+    "a h h h h h h"
+    "a i i i i i i";
 }
 
 .icons-menu {
   vertical-align: middle;
   margin-right: 5px;
-  margin-left: -25px;
+  margin-left: -5px;
 }
 
 #a {
-  grid-row: 1 / span 8;
+  /* grid-row: 1 / span 8;
   grid-column: 1;
-  width: 25px;
+  width: 25px; */
   background-color: #7b7d7b;
+  grid-area: a;
 }
 #a img {
-  margin-top: 110px;
+  margin-top: 65px;
   margin-left: 2px;
 }
 
 #b {
-  grid-row: 1 / span 1;
-  grid-column: 2;
+  /* grid-row: 1 / span 1;
+  grid-column: 2; */
+  grid-area: b;
 }
 
 #c {
-  grid-row: 2 / span 1;
-  grid-column: 2;
+  /*  grid-row: 2 / span 1;
+  grid-column: 2; */
+  grid-area: c;
 }
 
 #d {
-  grid-row: 3 / span 1;
-  grid-column: 2;
+  /* grid-row: 3 / span 1;
+  grid-column: 2; */
+  grid-area: d;
 }
 
 #e {
-  grid-row: 4 / span 1;
-  grid-column: 2;
+  /* grid-row: 4 / span 1;
+  grid-column: 2; */
+  grid-area: e;
 }
 
 #f {
-  grid-row: 5 / span 1;
-  grid-column: 2;
+  /*  grid-row: 5 / span 1;
+  grid-column: 2; */
+  grid-area: f;
 }
 
 #g {
-  grid-row: 6 / span 1;
-  grid-column: 2;
+  /* grid-row: 6 / span 1;
+  grid-column: 2; */
+  grid-area: g;
 }
 
 #h {
-  grid-row: 7 / span 1;
-  grid-column: 2;
+  /*  grid-row: 7 / span 1;
+  grid-column: 2; */
+  grid-area: h;
 }
 
 #i {
-  grid-row: 8 / span 1;
-  grid-column: 2;
+  /* grid-row: 8 / span 1;
+  grid-column: 2; */
+  grid-area: i;
 }
 
 .fa-caret-right {
@@ -181,6 +223,13 @@ main {
   vertical-align: text-bottom;
 }
 
-div#dropdown-content #b:hover {
-  background-color: blue;
+div#dropdown-content > div:hover {
+  background-color: #00007b;
+}
+div#dropdown-content > div > a:hover {
+  color: white;
+}
+
+div#dropdown-content > #a:hover {
+  background-color: #7b7d7b;
 }
